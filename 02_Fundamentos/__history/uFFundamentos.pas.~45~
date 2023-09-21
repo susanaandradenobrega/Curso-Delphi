@@ -1,0 +1,309 @@
+unit uFFundamentos;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics, Math,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ComCtrls, Vcl.Buttons, Vcl.ExtCtrls,
+  Vcl.StdCtrls, Vcl.Menus;
+
+type
+  TfFundamentos = class(TForm)
+    pcMenuPrincipal: TPageControl;
+    TabArchivo: TTabSheet;
+    Panel1: TPanel;
+    Panel2: TPanel;
+    sbOperaciones: TSpeedButton;
+    Panel3: TPanel;
+    sbFormatoReales: TSpeedButton;
+    Panel4: TPanel;
+    Panel7: TPanel;
+    sbCalcularTeoremaPitagoras: TSpeedButton;
+    Panel8: TPanel;
+    Panel9: TPanel;
+    Panel10: TPanel;
+    gbCatetoA: TGroupBox;
+    edCatetoA: TEdit;
+    gbCatetoB: TGroupBox;
+    edCatetoB: TEdit;
+    Panel11: TPanel;
+    spSaludar: TSpeedButton;
+    Panel12: TPanel;
+    spOperaciones: TSpeedButton;
+    SpeedButton2: TSpeedButton;
+    Panel13: TPanel;
+    sbOptionsVariant: TSpeedButton;
+    pVariant: TPanel;
+    mmMenu: TMainMenu;
+    Archivo1: TMenuItem;
+    Nmeros1: TMenuItem;
+    Nmeros2: TMenuItem;
+    eoremadePitgoras1: TMenuItem;
+    eoremadePitgoras2: TMenuItem;
+    Variant1: TMenuItem;
+    Sumarnmeros1: TMenuItem;
+    Operarnmeros1: TMenuItem;
+    CalcularTP1: TMenuItem;
+    SALUDAR1: TMenuItem;
+    Operaciones1: TMenuItem;
+    Opcionesdevariant1: TMenuItem;
+    TabSheet1: TTabSheet;
+    Panel14: TPanel;
+    sbVerMenu: TSpeedButton;
+    Panel15: TPanel;
+    Ver1: TMenuItem;
+    sbSumarNúmeros: TSpeedButton;
+    Panel16: TPanel;
+    sbOperacionesCadena: TSpeedButton;
+    Label2: TLabel;
+    Panel5: TPanel;
+    Panel6: TPanel;
+    gbNum1: TGroupBox;
+    edNum1: TEdit;
+    gbNum2: TGroupBox;
+    edNum2: TEdit;
+    paginaContenido: TPageControl;
+    TabSheet2: TTabSheet;
+    mSalida: TMemo;
+    TabSheet3: TTabSheet;
+    mSalidaTexto: TMemo;
+    paginaOperacionesTexto: TPageControl;
+    TabSheet4: TTabSheet;
+    ScrollBox1: TScrollBox;
+    sbConcatenar: TSpeedButton;
+    Panel17: TPanel;
+    GroupBox1: TGroupBox;
+    edTextoInicial: TEdit;
+    GroupBox2: TGroupBox;
+    edTextoFinal: TEdit;
+    Panel18: TPanel;
+    GroupBox3: TGroupBox;
+    edCopiar: TEdit;
+    GroupBox4: TGroupBox;
+    edCant: TEdit;
+    edPos: TEdit;
+    sbCopiarTexto: TSpeedButton;
+    procedure sbOperacionesClick(Sender: TObject);
+    procedure sbFormatoRealesClick(Sender: TObject);
+    procedure edNum2KeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure sbCalcularTeoremaPitagorasClick(Sender: TObject);
+    procedure spSaludarClick(Sender: TObject);
+    procedure spOperacionesClick(Sender: TObject);
+    procedure sbOptionsVariantClick(Sender: TObject);
+    procedure sbVerMenuClick(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+    procedure sbSumarNúmerosClick(Sender: TObject);
+    procedure sbOperacionesCadenaClick(Sender: TObject);
+    procedure sbConcatenarClick(Sender: TObject);
+    procedure sbCopiarTextoClick(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  fFundamentos: TfFundamentos;
+
+implementation
+
+{$R *.dfm}
+
+procedure TfFundamentos.edNum2KeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if Key = $0D then
+  begin
+      sbOperacionesClick(Self);
+  end;
+end;
+
+
+procedure TfFundamentos.FormCreate(Sender: TObject);
+begin
+  //Para que empienze en la pestaña zero (Pestaña Archivo)
+  pcMenuPrincipal.TabIndex := 0;
+
+end;
+
+procedure TfFundamentos.sbCalcularTeoremaPitagorasClick(Sender: TObject);
+var
+a, b, h : real;
+
+begin
+  a := StrToFloat(edCatetoA.Text);
+  b := StrToFloat(edCatetoB.Text);
+
+  h := sqrt(power(a, 2) + power(b, 2));
+
+  // Separar las operaciones
+  mSalida.Lines.Add('=========Teorema de Pitágoras===========');
+
+  //Mostrar en pantalla
+  mSalida.Lines.Add('Cateto A =' + FloatToStr(a) + ' y Cateto B = ' + FloatToStr(b) +
+    ' entonces la Hipotenusa = ' + FloatToStr(h));
+end;
+
+procedure TfFundamentos.sbConcatenarClick(Sender: TObject);
+var
+texto1, texto2, textoFinal : string;
+
+begin
+  mSalidaTexto.Lines.Clear;
+  mSalidaTexto.Lines.Add('Concatenado textos ....');
+
+  texto1 := edTextoInicial.Text;
+  texto2 := edTextoFinal.Text;
+  textoFinal := texto1 + texto2;
+
+  mSalidaTexto.Lines.Add(textoFinal);
+
+
+end;
+
+procedure TfFundamentos.sbCopiarTextoClick(Sender: TObject);
+var
+p, c : integer;
+texto : string;
+
+begin
+  p := StrToInt(edPos.Text);
+  c := StrToInt(edCant.Text);
+
+  texto := edCopiar.Text;
+
+  // Operación de copiar
+  texto :=  Copy(texto, p, c);
+
+  mSalidaTexto.Lines.Clear;
+  mSalidaTexto.Lines.Add(texto);
+
+end;
+
+procedure TfFundamentos.sbOperacionesCadenaClick(Sender: TObject);
+begin
+  paginaContenido.TabIndex := 1;
+end;
+
+procedure TfFundamentos.sbOperacionesClick(Sender: TObject);
+var
+  a, b, c : integer; // Definiendo los tipos de variable entero
+  d : real;
+
+begin
+  // Tomar los valores de las cajas de texto -> StrToInt
+  a := StrToInt(edNum1.Text);
+  b := StrToInt(edNum2.Text);
+
+  // Separar las operaciones
+  mSalida.Lines.Add('=========Calculadora===========');
+
+  // Suma
+  c := a + b;
+  // Mostrar en pantalla -> IntToStr
+  mSalida.Lines.Add(IntToStr(a) + '+' + IntToStr(b) + ' = ' + IntToStr(c));
+
+  // Resta
+  c := a - b;
+  // Mostrar en pantalla -> IntToStr
+  mSalida.Lines.Add(IntToStr(a) + '-' + IntToStr(b) + ' = ' + IntToStr(c));
+
+  // Multiplicación
+  c := a * b;
+  // Mostrar en pantalla -> IntToStr
+  mSalida.Lines.Add(IntToStr(a) + '*' + IntToStr(b) + ' = ' + IntToStr(c));
+
+  // División
+  d := a / b;
+  // Mostrar en pantalla -> IntToStr
+  mSalida.Lines.Add(IntToStr(a) + '/' + IntToStr(b) + ' = ' + FloatToStr(d));
+
+
+end;
+
+procedure TfFundamentos.sbOptionsVariantClick(Sender: TObject);
+var
+variable : variant;
+begin
+  // Fecha
+  variable := now;
+  //Mostrar el valor en la pantalla
+  mSalida.Lines.Add('variable = ' + VarToStr(variable));
+end;
+
+procedure TfFundamentos.sbSumarNúmerosClick(Sender: TObject);
+var
+  a, b, c: word; // Definiendo los tipos de variable entero
+
+begin
+  a := 123;
+  b := 412;
+
+  // Definimos la suma
+  c := a + b;
+
+  // Mostrar en pantalla -> IntToStr
+  mSalida.Lines.Add(IntToStr(a) + '+' + IntToStr(b) + ' = ' + IntToStr(c));
+end;
+
+procedure TfFundamentos.sbFormatoRealesClick(Sender: TObject);
+var
+numero : real;
+hh, mm, ss : integer;
+
+begin
+  numero := 124454152.256;
+
+  //Formateando números reales
+  mSalida.Lines.Add(FloatToStr(numero));
+  mSalida.Lines.Add(FloatToStrF(numero, ffNumber, 5, 0));
+  mSalida.Lines.Add(FloatToStrF(numero, ffNumber, 9, 3));
+
+  //Formateando números reales - dinero
+  numero := 12528458.25;
+
+  mSalida.Lines.Add(FloatToStrF(numero, ffCurrency, 16, 2));
+  mSalida.Lines.Add(FormatCurr('EURO 00,000,000', numero));
+  mSalida.Lines.Add(FormatCurr('EURO 000-000-000', numero));
+
+  //Formateando números reales - pequeños
+  numero := 0.000000001458;
+  mSalida.Lines.Add(FloatToStrF(numero, ffNumber, 16, 15));
+
+  //Formateando números en cadenas de texto
+  hh := 3;
+  mm := 5;
+  ss := 7;
+
+  mSalida.Lines.Add(IntToStr(hh) + ' : ' + IntToStr(mm) + ' : ' + IntToStr(ss));
+  mSalida.Lines.Add(FormatCurr('00', hh) + ' : ' + FormatCurr('00', mm) + ' : '
+    + FormatCurr('00', ss));
+end;
+
+procedure TfFundamentos.sbVerMenuClick(Sender: TObject);
+begin
+  pcMenuPrincipal.Visible := not pcMenuPrincipal.Visible;
+end;
+
+procedure TfFundamentos.spOperacionesClick(Sender: TObject);
+var
+  letter : char;
+begin
+  letter := 'S';
+
+  mSalida.Lines.Add('Caracteres:');
+  mSalida.Lines.Add('');
+  // Concatenation
+  mSalida.Lines.Add(letter + letter);
+end;
+
+procedure TfFundamentos.spSaludarClick(Sender: TObject);
+var
+  nombre : string;
+begin
+  nombre := 'Susana';
+  ShowMessage('Hola, ' + nombre);
+end;
+
+end.

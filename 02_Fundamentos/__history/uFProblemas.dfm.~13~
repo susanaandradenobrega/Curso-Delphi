@@ -1,0 +1,547 @@
+object FProblemas: TFProblemas
+  Left = 0
+  Top = 0
+  BorderStyle = bsToolWindow
+  Caption = 'Resoluci'#243'n de Problemas'
+  ClientHeight = 721
+  ClientWidth = 1358
+  Color = clWhite
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -16
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  Menu = MenuPrincipal
+  Position = poScreenCenter
+  TextHeight = 21
+  object paginaPrincipal: TPageControl
+    Left = 0
+    Top = 0
+    Width = 858
+    Height = 721
+    ActivePage = TabConsola
+    Align = alClient
+    MultiLine = True
+    TabOrder = 0
+    TabPosition = tpLeft
+    ExplicitWidth = 1354
+    ExplicitHeight = 710
+    object TabConsola: TTabSheet
+      Caption = 'Consola de Mensajes'
+      object mConsola: TMemo
+        Left = 0
+        Top = 0
+        Width = 822
+        Height = 713
+        Align = alClient
+        Lines.Strings = (
+          'mConsola')
+        TabOrder = 0
+        ExplicitLeft = -2
+      end
+    end
+  end
+  object Contenido: TCardPanel
+    Left = 858
+    Top = 0
+    Width = 500
+    Height = 721
+    Align = alRight
+    ActiveCard = cardFactorialNumero
+    BevelOuter = bvNone
+    Caption = 'Contenido'
+    TabOrder = 1
+    ExplicitLeft = 1008
+    ExplicitHeight = 710
+    object cardProblema1: TCard
+      Left = 0
+      Top = 0
+      Width = 500
+      Height = 721
+      Caption = 'cardProblema1'
+      CardIndex = 0
+      TabOrder = 0
+      ExplicitLeft = 2
+      ExplicitTop = 1
+      ExplicitWidth = 498
+      ExplicitHeight = 708
+      object GroupBox1: TGroupBox
+        Left = 0
+        Top = 57
+        Width = 500
+        Height = 65
+        Align = alTop
+        Caption = 'Ingrese un n'#250'mero de 4 cifras'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        ExplicitLeft = -256
+        ExplicitTop = 112
+        ExplicitWidth = 498
+        object sbCalcularSumaCuatroDigitosF1: TSpeedButton
+          Left = 210
+          Top = 19
+          Width = 144
+          Height = 44
+          Align = alRight
+          Caption = 'Calcular Suma - F1'
+          OnClick = sbCalcularSumaCuatroDigitosF1Click
+          ExplicitLeft = 352
+        end
+        object sbCalcularSumaCuatroDigitosF2: TSpeedButton
+          Left = 354
+          Top = 19
+          Width = 144
+          Height = 44
+          Align = alRight
+          Caption = 'Calcular Suma - F2'
+          OnClick = sbCalcularSumaCuatroDigitosF2Click
+          ExplicitLeft = 376
+          ExplicitTop = 22
+        end
+        object edNumero4C: TEdit
+          AlignWithMargins = True
+          Left = 5
+          Top = 22
+          Width = 202
+          Height = 38
+          Align = alClient
+          Alignment = taCenter
+          Color = clTeal
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 0
+          Text = '1234'
+          ExplicitTop = 26
+          ExplicitWidth = 488
+          ExplicitHeight = 29
+        end
+      end
+      object Panel1: TPanel
+        Left = 0
+        Top = 0
+        Width = 500
+        Height = 57
+        Align = alTop
+        BevelOuter = bvNone
+        Color = clYellow
+        ParentBackground = False
+        TabOrder = 1
+        ExplicitWidth = 498
+        object pExpProb1: TLabel
+          AlignWithMargins = True
+          Left = 3
+          Top = 3
+          Width = 494
+          Height = 51
+          Align = alClient
+          Caption = 
+            'A continuaci'#243'n ingrese un n'#250'mero de  cuatro cifras para proceder' +
+            ' a sumarlas y mostrar el resultado en la consola de mensajes.'
+          WordWrap = True
+          ExplicitWidth = 492
+          ExplicitHeight = 54
+        end
+      end
+    end
+    object cardProblema2: TCard
+      Left = 0
+      Top = 0
+      Width = 500
+      Height = 721
+      Caption = 'cardProblema2'
+      CardIndex = 1
+      TabOrder = 1
+      ExplicitLeft = 2
+      ExplicitTop = 1
+      ExplicitWidth = 498
+      ExplicitHeight = 708
+      object GroupBox2: TGroupBox
+        Left = 0
+        Top = 57
+        Width = 500
+        Height = 65
+        Align = alTop
+        Caption = 'Ingrese los coeficientes'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        ExplicitTop = 8
+        ExplicitWidth = 498
+        object Label2: TLabel
+          Left = 2
+          Top = 19
+          Width = 28
+          Height = 44
+          Align = alLeft
+          Caption = 'a = '
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+          Layout = tlCenter
+          ExplicitHeight = 21
+        end
+        object Label3: TLabel
+          Left = 100
+          Top = 19
+          Width = 29
+          Height = 44
+          Align = alLeft
+          Caption = 'b = '
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+          Layout = tlCenter
+          ExplicitHeight = 21
+        end
+        object Label4: TLabel
+          Left = 199
+          Top = 19
+          Width = 27
+          Height = 44
+          Align = alLeft
+          Caption = 'c = '
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = [fsBold]
+          ParentFont = False
+          Layout = tlCenter
+          ExplicitHeight = 21
+        end
+        object sbResolverEcuacionSegundoGrado: TSpeedButton
+          Left = 296
+          Top = 19
+          Width = 202
+          Height = 44
+          Align = alClient
+          Caption = 'Resolver'
+          OnClick = sbResolverEcuacionSegundoGradoClick
+          ExplicitLeft = 356
+          ExplicitTop = 21
+          ExplicitWidth = 144
+        end
+        object edValA: TEdit
+          AlignWithMargins = True
+          Left = 33
+          Top = 22
+          Width = 64
+          Height = 38
+          Align = alLeft
+          Alignment = taCenter
+          Color = clTeal
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 0
+          Text = '1'
+        end
+        object edValB: TEdit
+          AlignWithMargins = True
+          Left = 132
+          Top = 22
+          Width = 64
+          Height = 38
+          Align = alLeft
+          Alignment = taCenter
+          Color = clTeal
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 1
+          Text = '5'
+          ExplicitLeft = 213
+          ExplicitTop = 21
+        end
+        object edValC: TEdit
+          AlignWithMargins = True
+          Left = 229
+          Top = 22
+          Width = 64
+          Height = 38
+          Align = alLeft
+          Alignment = taCenter
+          Color = clTeal
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 2
+          Text = '-6'
+          ExplicitLeft = 302
+          ExplicitTop = 21
+        end
+      end
+      object Panel2: TPanel
+        Left = 0
+        Top = 0
+        Width = 500
+        Height = 57
+        Align = alTop
+        BevelOuter = bvNone
+        Color = clYellow
+        ParentBackground = False
+        TabOrder = 1
+        ExplicitTop = 8
+        ExplicitWidth = 498
+        object Label1: TLabel
+          AlignWithMargins = True
+          Left = 3
+          Top = 3
+          Width = 494
+          Height = 51
+          Align = alClient
+          Caption = 
+            'Aqui resolveremos una ecuaci'#243'n de segundo grado. A continuaci'#243'n ' +
+            'ingrese los coeficientes de la ecuaci'#243'n.'
+          WordWrap = True
+          ExplicitWidth = 469
+          ExplicitHeight = 42
+        end
+      end
+    end
+    object cardMenuOpciones: TCard
+      Left = 0
+      Top = 0
+      Width = 500
+      Height = 721
+      Caption = 'cardMenuOpciones'
+      CardIndex = 2
+      TabOrder = 2
+      ExplicitWidth = 185
+      ExplicitHeight = 41
+      object tvMenu: TTreeView
+        Left = 0
+        Top = 65
+        Width = 500
+        Height = 656
+        Align = alClient
+        Indent = 19
+        ReadOnly = True
+        TabOrder = 0
+        OnClick = tvMenuClick
+        ExplicitLeft = 120
+        ExplicitTop = 296
+        ExplicitWidth = 121
+        ExplicitHeight = 97
+      end
+      object GroupBox3: TGroupBox
+        Left = 0
+        Top = 0
+        Width = 500
+        Height = 65
+        Align = alTop
+        Caption = 'Ingrese su nombre'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 1
+        ExplicitTop = 8
+        object edNombre: TEdit
+          AlignWithMargins = True
+          Left = 5
+          Top = 22
+          Width = 490
+          Height = 38
+          Align = alClient
+          Alignment = taCenter
+          Color = clTeal
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clWindowText
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          ParentFont = False
+          TabOrder = 0
+          Text = 'Susana'
+          ExplicitWidth = 202
+          ExplicitHeight = 29
+        end
+      end
+    end
+    object cardTablaMultiplicarFOR: TCard
+      Left = 0
+      Top = 0
+      Width = 500
+      Height = 721
+      Caption = 'cardTablaMultiplicarFOR'
+      CardIndex = 3
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -13
+      Font.Name = 'Segoe UI'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+      ExplicitWidth = 185
+      ExplicitHeight = 41
+      object GroupBox4: TGroupBox
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 494
+        Height = 70
+        Align = alTop
+        Caption = 'Ingrese un n'#250'mero entero'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        ExplicitLeft = 2
+        ExplicitTop = 4
+        object sbCalcularTablaMultiplicar: TSpeedButton
+          Left = 344
+          Top = 19
+          Width = 148
+          Height = 49
+          Align = alRight
+          Caption = 'Calcular'
+          OnClick = sbCalcularTablaMultiplicarClick
+        end
+        object edTM: TEdit
+          AlignWithMargins = True
+          Left = 5
+          Top = 22
+          Width = 336
+          Height = 43
+          Align = alClient
+          Alignment = taCenter
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clHotLight
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          NumbersOnly = True
+          ParentFont = False
+          TabOrder = 0
+          Text = '5'
+          OnKeyDown = edTMKeyDown
+          ExplicitTop = 26
+          ExplicitWidth = 484
+          ExplicitHeight = 29
+        end
+      end
+    end
+    object cardFactorialNumero: TCard
+      Left = 0
+      Top = 0
+      Width = 500
+      Height = 721
+      Caption = 'cardFactorialNumero'
+      CardIndex = 4
+      TabOrder = 4
+      ExplicitWidth = 185
+      ExplicitHeight = 41
+      object GroupBox5: TGroupBox
+        AlignWithMargins = True
+        Left = 3
+        Top = 3
+        Width = 494
+        Height = 70
+        Align = alTop
+        Caption = 'Ingrese un n'#250'mero entero'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -13
+        Font.Name = 'Segoe UI'
+        Font.Style = [fsBold]
+        ParentFont = False
+        TabOrder = 0
+        ExplicitLeft = 6
+        ExplicitTop = 11
+        object sbFactorialNumero: TSpeedButton
+          Left = 344
+          Top = 19
+          Width = 148
+          Height = 49
+          Align = alRight
+          Caption = 'Calcular'
+          OnClick = sbCalcularTablaMultiplicarClick
+        end
+        object edNumFact: TEdit
+          AlignWithMargins = True
+          Left = 5
+          Top = 22
+          Width = 336
+          Height = 43
+          Align = alClient
+          Alignment = taCenter
+          Font.Charset = DEFAULT_CHARSET
+          Font.Color = clHotLight
+          Font.Height = -16
+          Font.Name = 'Segoe UI'
+          Font.Style = []
+          NumbersOnly = True
+          ParentFont = False
+          TabOrder = 0
+          Text = '5'
+          OnKeyDown = edTMKeyDown
+          ExplicitHeight = 29
+        end
+      end
+    end
+  end
+  object MenuPrincipal: TMainMenu
+    Left = 705
+    Top = 272
+    object Archivo1: TMenuItem
+      Caption = 'Archivo'
+      object Archivo2: TMenuItem
+        Caption = 'Problemas'
+        object problema1: TMenuItem
+          Caption = 'Suma digitos n'#250'mero de cuatro cifras'
+          OnClick = problema1Click
+        end
+        object problema2: TMenuItem
+          Caption = 'Ecuaci'#243'n de Segundo Grado'
+          OnClick = problema2Click
+        end
+        object problema3: TMenuItem
+          Caption = 'Crear men'#250' de opciones'
+          OnClick = problema3Click
+        end
+        object ablamultiplicarciclofor1: TMenuItem
+          Caption = 'Tabla multiplicar ciclo FOR'
+          OnClick = ablamultiplicarciclofor1Click
+        end
+        object Factorialdeunnmero1: TMenuItem
+          Caption = 'Factorial de un n'#250'mero'
+          OnClick = Factorialdeunnmero1Click
+        end
+      end
+    end
+  end
+end
