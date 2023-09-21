@@ -46,6 +46,16 @@ type
     GroupBox4: TGroupBox;
     edTM: TEdit;
     sbCalcularTablaMultiplicar: TSpeedButton;
+    Factorialdeunnmero1: TMenuItem;
+    cardFactorialNumero: TCard;
+    GroupBox5: TGroupBox;
+    sbFactorialNumero: TSpeedButton;
+    edNumFact: TEdit;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    Label8: TLabel;
+    Label9: TLabel;
     procedure sbCalcularSumaCuatroDigitosF1Click(Sender: TObject);
     procedure sbCalcularSumaCuatroDigitosF2Click(Sender: TObject);
     procedure sbResolverEcuacionSegundoGradoClick(Sender: TObject);
@@ -56,6 +66,10 @@ type
     procedure ablamultiplicarciclofor1Click(Sender: TObject);
     procedure sbCalcularTablaMultiplicarClick(Sender: TObject);
     procedure edTMKeyDown(Sender: TObject; var Key: Word; Shift: TShiftState);
+    procedure Factorialdeunnmero1Click(Sender: TObject);
+    procedure sbFactorialNumeroClick(Sender: TObject);
+    procedure edNumFactKeyDown(Sender: TObject; var Key: Word;
+      Shift: TShiftState);
   private
     { Private declarations }
   public
@@ -76,6 +90,15 @@ begin
   Contenido.ActiveCard := cardTablaMultiplicarFOR;
 end;
 
+procedure TFProblemas.edNumFactKeyDown(Sender: TObject; var Key: Word;
+  Shift: TShiftState);
+begin
+  if key = $0D then
+    begin    // Enviar el mismo, es decir, es como se precionara el boton
+    sbFactorialNumeroClick(self);
+    end;
+end;
+
 procedure TFProblemas.edTMKeyDown(Sender: TObject; var Key: Word;
   Shift: TShiftState);
 begin
@@ -83,8 +106,12 @@ begin
     begin
     // Enviar el mismo, es decir, es como se precionara el boton
     sbCalcularTablaMultiplicarClick(self);
-
     end;
+end;
+
+procedure TFProblemas.Factorialdeunnmero1Click(Sender: TObject);
+begin
+  Contenido.ActiveCard := cardFactorialNumero;
 end;
 
 procedure TFProblemas.problema1Click(Sender: TObject);
@@ -170,11 +197,24 @@ begin
       t := n * i;
       mConsola.Lines.Add(IntToStr(n) + ' x ' + IntToStr(i) + ' = ' + IntToStr(t));
     end;
+end;
 
+procedure TFProblemas.sbFactorialNumeroClick(Sender: TObject);
+var
+  n, i : integer;
+  fact : LONG64;
 
+begin
+  fact := 1;
+  n := StrToInt(edNumFact.Text);
 
+  for i := 1 to n do
+  begin
+    fact := fact * i
+  end;
 
-
+  mConsola.Lines.Clear;
+  mConsola.Lines.Add('El factorial de ' + IntToStr(n) + ' es: ' + IntToStr(fact));
 
 end;
 

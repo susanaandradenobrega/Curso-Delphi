@@ -24,8 +24,8 @@ object FProblemas: TFProblemas
     MultiLine = True
     TabOrder = 0
     TabPosition = tpLeft
-    ExplicitWidth = 1354
-    ExplicitHeight = 710
+    ExplicitWidth = 850
+    ExplicitHeight = 709
     object TabConsola: TTabSheet
       Caption = 'Consola de Mensajes'
       object mConsola: TMemo
@@ -37,7 +37,8 @@ object FProblemas: TFProblemas
         Lines.Strings = (
           'mConsola')
         TabOrder = 0
-        ExplicitLeft = 6
+        ExplicitWidth = 814
+        ExplicitHeight = 701
       end
     end
   end
@@ -51,8 +52,8 @@ object FProblemas: TFProblemas
     BevelOuter = bvNone
     Caption = 'Contenido'
     TabOrder = 1
-    ExplicitLeft = 1008
-    ExplicitHeight = 710
+    ExplicitLeft = 850
+    ExplicitHeight = 709
     object cardProblema1: TCard
       Left = 0
       Top = 0
@@ -61,7 +62,6 @@ object FProblemas: TFProblemas
       Caption = 'cardProblema1'
       CardIndex = 0
       TabOrder = 0
-      ExplicitLeft = 2
       object Label6: TLabel
         AlignWithMargins = True
         Left = 3
@@ -94,9 +94,6 @@ object FProblemas: TFProblemas
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
-        ExplicitLeft = -256
-        ExplicitTop = 112
-        ExplicitWidth = 498
         object sbCalcularSumaCuatroDigitosF1: TSpeedButton
           Left = 210
           Top = 19
@@ -135,8 +132,6 @@ object FProblemas: TFProblemas
           ParentFont = False
           TabOrder = 0
           Text = '1234'
-          ExplicitTop = 26
-          ExplicitWidth = 488
           ExplicitHeight = 29
         end
       end
@@ -150,8 +145,6 @@ object FProblemas: TFProblemas
         Color = clYellow
         ParentBackground = False
         TabOrder = 1
-        ExplicitTop = 0
-        ExplicitWidth = 498
         object pExpProb1: TLabel
           AlignWithMargins = True
           Left = 3
@@ -163,8 +156,8 @@ object FProblemas: TFProblemas
             'A continuaci'#243'n ingrese un n'#250'mero de  cuatro cifras para proceder' +
             ' a sumarlas y mostrar el resultado en la consola de mensajes.'
           WordWrap = True
-          ExplicitWidth = 492
-          ExplicitHeight = 54
+          ExplicitWidth = 470
+          ExplicitHeight = 42
         end
       end
     end
@@ -176,10 +169,6 @@ object FProblemas: TFProblemas
       Caption = 'cardProblema2'
       CardIndex = 1
       TabOrder = 1
-      ExplicitLeft = 2
-      ExplicitTop = 1
-      ExplicitWidth = 498
-      ExplicitHeight = 708
       object Label7: TLabel
         AlignWithMargins = True
         Left = 3
@@ -212,8 +201,6 @@ object FProblemas: TFProblemas
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
-        ExplicitTop = 8
-        ExplicitWidth = 498
         object Label2: TLabel
           Left = 2
           Top = 19
@@ -291,6 +278,7 @@ object FProblemas: TFProblemas
           ParentFont = False
           TabOrder = 0
           Text = '1'
+          ExplicitHeight = 29
         end
         object edValB: TEdit
           AlignWithMargins = True
@@ -309,8 +297,7 @@ object FProblemas: TFProblemas
           ParentFont = False
           TabOrder = 1
           Text = '5'
-          ExplicitLeft = 213
-          ExplicitTop = 21
+          ExplicitHeight = 29
         end
         object edValC: TEdit
           AlignWithMargins = True
@@ -329,8 +316,7 @@ object FProblemas: TFProblemas
           ParentFont = False
           TabOrder = 2
           Text = '-6'
-          ExplicitLeft = 302
-          ExplicitTop = 21
+          ExplicitHeight = 29
         end
       end
       object Panel2: TPanel
@@ -343,8 +329,6 @@ object FProblemas: TFProblemas
         Color = clYellow
         ParentBackground = False
         TabOrder = 1
-        ExplicitTop = 8
-        ExplicitWidth = 498
         object Label1: TLabel
           AlignWithMargins = True
           Left = 3
@@ -369,8 +353,6 @@ object FProblemas: TFProblemas
       Caption = 'cardMenuOpciones'
       CardIndex = 2
       TabOrder = 2
-      ExplicitWidth = 185
-      ExplicitHeight = 41
       object Label8: TLabel
         AlignWithMargins = True
         Left = 3
@@ -399,10 +381,6 @@ object FProblemas: TFProblemas
         ReadOnly = True
         TabOrder = 0
         OnClick = tvMenuClick
-        ExplicitLeft = 120
-        ExplicitTop = 296
-        ExplicitWidth = 121
-        ExplicitHeight = 97
       end
       object GroupBox3: TGroupBox
         Left = 0
@@ -418,7 +396,6 @@ object FProblemas: TFProblemas
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 1
-        ExplicitTop = 8
         object edNombre: TEdit
           AlignWithMargins = True
           Left = 5
@@ -436,7 +413,6 @@ object FProblemas: TFProblemas
           ParentFont = False
           TabOrder = 0
           Text = 'Susana'
-          ExplicitWidth = 202
           ExplicitHeight = 29
         end
       end
@@ -455,8 +431,6 @@ object FProblemas: TFProblemas
       Font.Style = []
       ParentFont = False
       TabOrder = 3
-      ExplicitWidth = 185
-      ExplicitHeight = 41
       object Label9: TLabel
         AlignWithMargins = True
         Left = 3
@@ -490,8 +464,6 @@ object FProblemas: TFProblemas
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
-        ExplicitLeft = 2
-        ExplicitTop = 4
         object sbCalcularTablaMultiplicar: TSpeedButton
           Left = 344
           Top = 19
@@ -519,8 +491,6 @@ object FProblemas: TFProblemas
           TabOrder = 0
           Text = '5'
           OnKeyDown = edTMKeyDown
-          ExplicitTop = 26
-          ExplicitWidth = 484
           ExplicitHeight = 29
         end
       end
@@ -533,8 +503,7 @@ object FProblemas: TFProblemas
       Caption = 'cardFactorialNumero'
       CardIndex = 4
       TabOrder = 4
-      ExplicitWidth = 185
-      ExplicitHeight = 41
+      ExplicitHeight = 709
       object Label5: TLabel
         AlignWithMargins = True
         Left = 3
@@ -568,8 +537,6 @@ object FProblemas: TFProblemas
         Font.Style = [fsBold]
         ParentFont = False
         TabOrder = 0
-        ExplicitLeft = 6
-        ExplicitTop = 11
         object sbFactorialNumero: TSpeedButton
           Left = 344
           Top = 19
@@ -598,8 +565,7 @@ object FProblemas: TFProblemas
           TabOrder = 0
           Text = '5'
           OnKeyDown = edNumFactKeyDown
-          ExplicitLeft = 3
-          ExplicitTop = 24
+          ExplicitHeight = 29
         end
       end
     end
